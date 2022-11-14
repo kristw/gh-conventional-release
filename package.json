@@ -1,5 +1,5 @@
 {
-  "name": "circleci-gh-conventional-release",
+  "name": "@kristw/circleci-gh-conventional-release",
   "version": "0.1.11",
   "description": "Creates a new GitHub Release following Conventional Commits",
   "bin": "bin/createRelease.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/escaletech/circleci-gh-conventional-releases.git"
+    "url": "git+https://github.com/kristw/circleci-gh-conventional-releases.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/escaletech/circleci-gh-conventional-releases/issues"
+    "url": "https://github.com/kristw/circleci-gh-conventional-releases/issues"
   },
-  "homepage": "https://github.com/escaletech/circleci-gh-conventional-releases#readme",
+  "homepage": "https://github.com/kristw/circleci-gh-conventional-releases#readme",
   "dependencies": {
     "@octokit/rest": "^17.11.0",
     "chalk": "^4.1.0",
