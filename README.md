@@ -1,10 +1,6 @@
-# circleci-gh-conventional-release
+# gh-conventional-release
 
-[![Coverage Status](https://img.shields.io/coveralls/github/escaletech/circleci-gh-conventional-release/master)](https://coveralls.io/github/escaletech/circleci-gh-conventional-release)
-[![CircleCI](https://img.shields.io/circleci/build/gh/escaletech/circleci-gh-conventional-release)](https://circleci.com/gh/escaletech/circleci-gh-conventional-release)
-[![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/escaletech/gh-conventional-release)](https://circleci.com/orbs/registry/orb/escaletech/gh-conventional-release)
-
-CircleCI Orb to create releases on GitHub based on tags
+Create releases on GitHub based on tags
 
 ## Usage
 
@@ -14,6 +10,19 @@ Environment variables used for default parameters:
 - `CIRCLE_TAG` (set by default in CircleCI when build is triggered by a tag push)
 - `CIRCLE_PROJECT_USERNAME` (set by default in CircleCI)
 - `CIRCLE_PROJECT_REPONAME` (set by default in CircleCI)
+
+### Plain Node.js
+
+```sh
+GITHUB_TOKEN="$GITHUB_TOKEN" \
+TARGET_TAG="$CIRCLE_TAG" \
+REPO_OWNER="$CIRCLE_PROJECT_USERNAME" \
+REPO_NAME="$CIRCLE_PROJECT_REPONAME" \
+CONTINUE_ON_ERROR="false" \
+npx https://github.com/kristw/circleci-gh-conventional-release
+```
+
+### CircleCI
 
 Assuming an environment with all the required variables, usage consists of simply calling the `create-release` job or command:
 
@@ -54,13 +63,9 @@ workflows:
 
 This will result in a GitHub release like the following:
 
-![](docs/sample-release.png)
+![sample](docs/sample-release.png)
 
-### Other CIs
-
-This app may run on other CI software, not only on CircleCI. You need to provide the same variables as you do on CircleCI.
-
-#### Github Actions
+### Github Actions
 
 ```yaml
 name: New Release
@@ -81,7 +86,7 @@ jobs:
         with:
           node-version: 12.x
       - name: Install GH Conventional Release
-        run: sudo npm install -g escaletech/circleci-gh-conventional-release
+        run: sudo npm install -g @kristw/gh-conventional-release
       - name: Generate Release
         shell: bash
         run: |
@@ -93,7 +98,7 @@ jobs:
           circleci-gh-conventional-release
 ```
 
-###### Github Actions with template
+#### Github Actions with template
 
 ```yaml
 name: New Release
@@ -105,7 +110,7 @@ on:
 
 jobs:
   stage:
-    uses: escaletech/circleci-gh-conventional-release/.github/workflows/create-release-template.yml@master
+    uses: kristw/gh-conventional-release/.github/workflows/create-release-template.yml@master
     name: "Release"
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
@@ -113,18 +118,10 @@ jobs:
 
 ## Development
 
-Pull requests are always welcome!
-
-Accepted pull requests to `master` generates a development orb available as:
-
-```
-orb: escaletech/gh-conventional-release@dev:alpha
-```
-
 In order to publish to production you should generate a new tag.
 
 The convenient and proper way to do it is to run the following command:
 
-```
+```sh
 npm run release
 ```
