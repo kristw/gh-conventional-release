@@ -14,9 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/kristw/circleci-gh-conventional-releases.git"
   },
-  "authors": [
-    "kristw",
-    "escaletech"
+  "contributors": [
+    "Krist Wongsuphasawat (https://kristw.yellowpigz.com)",
+    "escaletech (https://escale.com.br/)"
   ],
   "license": "MIT",
   "bugs": {

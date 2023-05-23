@@ -2,14 +2,9 @@
 
 Create releases on GitHub based on tags
 
+This was forked and modified from <https://github.com/escaletech/circleci-gh-conventional-release>
+
 ## Usage
-
-Environment variables used for default parameters:
-
-- `GITHUB_TOKEN`
-- `CIRCLE_TAG` (set by default in CircleCI when build is triggered by a tag push)
-- `CIRCLE_PROJECT_USERNAME` (set by default in CircleCI)
-- `CIRCLE_PROJECT_REPONAME` (set by default in CircleCI)
 
 ### Plain Node.js
 
@@ -23,6 +18,13 @@ npx https://github.com/kristw/circleci-gh-conventional-release
 ```
 
 ### CircleCI
+
+Environment variables used for default parameters:
+
+- `GITHUB_TOKEN`
+- `CIRCLE_TAG` (set by default in CircleCI when build is triggered by a tag push)
+- `CIRCLE_PROJECT_USERNAME` (set by default in CircleCI)
+- `CIRCLE_PROJECT_REPONAME` (set by default in CircleCI)
 
 Assuming an environment with all the required variables, usage consists of simply calling the `create-release` job or command:
 
