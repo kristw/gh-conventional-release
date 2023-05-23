@@ -1,5 +1,5 @@
 {
-  "name": "@kristw/gh-conventional-release",
+  "name": "@kristw-lab/gh-conventional-release",
   "version": "1.0.0",
   "description": "Creates a new GitHub Release following Conventional Commits",
   "bin": "bin/createRelease.js",
