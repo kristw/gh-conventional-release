@@ -45,5 +45,8 @@
     "reportPath": ".",
     "reportFile": "sonar-report.xml",
     "indent": 4
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
