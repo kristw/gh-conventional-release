@@ -9,6 +9,7 @@ This was forked and modified from <https://github.com/escaletech/circleci-gh-con
 ### Plain Node.js
 
 ```sh
+GITHUB_URL="$GITHUB_URL" \
 GITHUB_TOKEN="$GITHUB_TOKEN" \
 TARGET_TAG="$CIRCLE_TAG" \
 REPO_OWNER="$CIRCLE_PROJECT_USERNAME" \
