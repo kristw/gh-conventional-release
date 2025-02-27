@@ -17,7 +17,10 @@ async function main () {
 
   try {
     const gh = new GitHubService(
-      new Octokit({ auth: config.gitHubToken }),
+      new Octokit({
+        auth: config.gitHubToken,
+        baseUrl: config.gitHubUrl,
+      }),
       config.repoOwner,
       config.repoName)
 
